@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-vq6!g2y9%y!ka!h))@nnkd=3k055_!n+axqy*hxh0t@88c^vzr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://orders.agreeablesea-cecdd17c.northeurope.azurecontainerapps.io',
+                 'orders.agreeablesea-cecdd17c.northeurope.azurecontainerapps.io','*']
+
+CSRF_TRUSTED_ORIGINS=['https://orders.agreeablesea-cecdd17c.northeurope.azurecontainerapps.io']
 
 
 # Application definition
@@ -76,9 +79,18 @@ WSGI_APPLICATION = 'restuarnt.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'efratzid123',
+        'PASSWORD': 'asz81298@%',
+        'HOST': 'bryce-server.postgres.database.azure.com',
+        'PORT': ''
     }
 }
 
